@@ -15,6 +15,13 @@ class Node:
         self.cost = None
         self.value = None
         self.goalcoords = None
+    def __str__(self):
+        return self.value
+    def __repr__(self):
+        if self.parent != None:
+            return f"{self.coords} | {repr(self.parent)}"
+        else:
+            return "A"
     def SetType(self, NodeType):
         self.type = NodeType
         return self

@@ -13,6 +13,13 @@ class Node:
         self.availableNodes = []
         self.type = None
         self.age = None
+    def __str__(self):
+        return self.age
+    def __repr__(self):
+        if self.parent != None:
+            return f"{self.coords} | {repr(self.parent)}"
+        else:
+            return "A"
     def SetType(self, NodeType):
         self.type = NodeType
         return self
